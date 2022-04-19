@@ -79,6 +79,14 @@ public class GameSocialMediaApplication {
         return guessingGameSBRepository.findTop();
     }
 
+    //    JUST TO CLEAR SOME DATA WHEN I NEED TO
+    @DeleteMapping("guessingGameTop/{id}")
+    public Iterable<GuessingGameScoreBoard> deleteScore(@PathVariable int id) {
+        guessingGameSBRepository.deleteById(id);
+        return guessingGameSBRepository.findAll();
+
+    }
+
 
     // ROUTES FOR USER REPOSITORY
     // FOR LOGGING IN. GET RID OF THE GET.
